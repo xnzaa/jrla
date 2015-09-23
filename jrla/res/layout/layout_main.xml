@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <com.jrla.client.SlideMenu
+        android:id="@+id/slide_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <include layout="@layout/layout_menu" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/layout_title_bar1"
+                layout="@layout/layout_title_bar" />
+
+            <RelativeLayout
+                android:id="@+id/layout_search_main1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_title_bar1"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal" >
+
+                <include layout="@layout/layout_search_main" />
+            </RelativeLayout>
+
+            <GridView
+                android:id="@+id/gv_main"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_search_main1"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:columnWidth="80dp"
+                android:gravity="center"
+                android:numColumns="2"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="20dp" >
+            </GridView>
+
+            <ListView
+                
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/gv_main"
+                android:id="@+id/resultlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" >
+            </ListView>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal" >
+
+                <include layout="@layout/layout_together_main" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </com.jrla.client.SlideMenu>
+
+</LinearLayout>
